@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="carDetails"
+            type="com.maricool.carcare.data.entities.CarDetails" />
+
+        <variable
+            name="viewModel"
+            type="com.maricool.carcare.ui.checkup.ChcekupViewModel"/>
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:background="@color/background"
+        android:layout_height="match_parent"
+        tools:context=".ui.checkup.ChcekupFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".ui.checkup.ChcekupFragment">
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/shapeableImageView"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintBottom_toBottomOf="@+id/view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_arrow_back" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/header_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Checkup"
+                android:textColor="@color/onBackground"
+                android:textSize="20sp"
+                app:fontFamily="@font/poppins_bold"
+                app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/shapeableImageView" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/textColorOnBackground"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/header_text" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/checkup_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="36dp"
+                android:text="Select a car"
+                android:textColor="@color/onBackground"
+                android:textSize="20sp"
+                app:fontFamily="@font/poppins_bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/checkup_det"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:lines="2"
+                android:text="Pick the details of the car you want or change the car or add another"
+                android:textColor="@color/textColorOnBackground"
+                android:textSize="14sp"
+                app:fontFamily="@font/poppins_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/checkup_text"
+                app:layout_constraintTop_toBottomOf="@+id/checkup_text" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/container_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="2dp"
+                android:background="@drawable/card_background"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="@id/checkup_det"
+                app:layout_constraintStart_toStartOf="@+id/checkup_det"
+                app:layout_constraintTop_toBottomOf="@+id/checkup_det">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/linearLayoutCompat2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="@+id/linearLayoutCompat"
+                    app:layout_constraintEnd_toStartOf="@+id/linearLayoutCompat3"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/linearLayoutCompat"
+                    app:layout_constraintTop_toTopOf="@+id/linearLayoutCompat">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Model"
+                        android:textColor="@color/textColorOnBackground"
+                        android:textSize="12sp"
+                        app:fontFamily="@font/poppins_medium" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/model"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:ems="9"
+                        android:lines="1"
+                        android:text="@{carDetails.model}"
+                        android:textColor="@color/onBackground"
+                        android:textSize="12sp"
+                        app:fontFamily="@font/poppins_semibold"
+                        tools:text="Toyota Acura" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/car_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/linearLayoutCompat"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/car_img" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/linearLayoutCompat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/linearLayoutCompat2"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Name"
+                        android:textColor="@color/textColorOnBackground"
+                        android:textSize="12sp"
+                        app:fontFamily="@font/poppins_medium" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/name"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:ems="9"
+                        android:lines="1"
+                        android:text="@{carDetails.model}"
+                        android:textColor="@color/onBackground"
+                        android:textSize="12sp"
+                        app:fontFamily="@font/poppins_semibold"
+                        tools:text="Toyota Acura" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/linearLayoutCompat3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="@+id/linearLayoutCompat2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/linearLayoutCompat2"
+                    app:layout_constraintTop_toTopOf="@+id/linearLayoutCompat2">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reg No."
+                        android:textColor="@color/textColorOnBackground"
+                        android:textSize="12sp"
+                        app:fontFamily="@font/poppins_medium" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/reg_no"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:ems="9"
+                        android:lines="1"
+                        android:text="@{carDetails.plateNumber}"
+                        android:textColor="@color/onBackground"
+                        android:textSize="12sp"
+                        app:fontFamily="@font/poppins_semibold"
+                        tools:text="Toyota Acura" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/arrow_sign"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/linearLayoutCompat3"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_arrow_forward" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/prob_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:text="Problem"
+                android:textColor="@color/onBackground"
+                android:textSize="20sp"
+                app:fontFamily="@font/poppins_bold"
+                app:layout_constraintStart_toStartOf="@+id/container_card"
+                app:layout_constraintTop_toBottomOf="@+id/container_card" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/prob_det"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:lines="2"
+                android:text="Pick the details of the car you want or change the car or add another"
+                android:textColor="@color/textColorOnBackground"
+                android:textSize="14sp"
+                app:fontFamily="@font/poppins_medium"
+                app:layout_constraintEnd_toEndOf="@+id/container_card"
+                app:layout_constraintStart_toStartOf="@+id/prob_text"
+                app:layout_constraintTop_toBottomOf="@+id/prob_text" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/err_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:text="Tell us what's wrong?"
+                android:textColor="@color/onBackground"
+                android:textSize="17sp"
+                app:fontFamily="@font/poppins_medium"
+                app:layout_constraintStart_toStartOf="@+id/prob_det"
+                app:layout_constraintTop_toBottomOf="@+id/prob_det" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/desc"
+                android:layout_width="0dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="13dp"
+                android:background="@drawable/card_background"
+                android:gravity="top"
+                android:hint="Add a title detail about what happened to your car"
+                android:lines="10"
+                android:padding="13dp"
+                android:textCursorDrawable="@null"
+                android:textColor="@color/textColorOnBackground"
+                android:inputType="text|textNoSuggestions"
+                android:textSize="14sp"
+                app:fontFamily="@font/poppins_medium"
+                app:layout_constraintEnd_toEndOf="@+id/prob_det"
+                app:layout_constraintStart_toStartOf="@+id/err_info"
+                app:layout_constraintTop_toBottomOf="@+id/err_info" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/loc_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:text="Location"
+                android:textColor="@color/onBackground"
+                android:textSize="20sp"
+                app:fontFamily="@font/poppins_bold"
+                app:layout_constraintStart_toStartOf="@+id/desc"
+                app:layout_constraintTop_toBottomOf="@+id/desc" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/loc_det"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:lines="2"
+                android:text="We need to have more information about you and your car's location"
+                android:textColor="@color/textColorOnBackground"
+                android:textSize="14sp"
+                app:fontFamily="@font/poppins_medium"
+                app:layout_constraintEnd_toEndOf="@+id/desc"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/loc_text"
+                app:layout_constraintTop_toBottomOf="@+id/loc_text" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/meet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:text="Where should we meet you?"
+                android:textColor="@color/onBackground"
+                android:textSize="17sp"
+                app:fontFamily="@font/poppins_medium"
+                app:layout_constraintStart_toStartOf="@+id/loc_det"
+                app:layout_constraintTop_toBottomOf="@+id/loc_det" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/customerSpinnerLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_background"
+                android:hint="Where should we meet"
+                app:layout_constraintEnd_toEndOf="@+id/loc_det"
+                app:layout_constraintStart_toStartOf="@+id/meet"
+                app:layout_constraintTop_toBottomOf="@+id/meet">
+
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/customerTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/card_background"
+                    android:clickable="true"
+                    android:textColor="@color/textColorOnBackground"
+                    android:textSize="13sp"
+                    app:fontFamily="@font/poppins_medium"
+                    tools:ignore="KeyboardInaccessibleWidget" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/add_loc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:drawablePadding="5dp"
+                android:text="Add a location"
+                android:textColor="@color/onBackground"
+                android:textSize="17sp"
+                app:drawableStartCompat="@drawable/pin"
+                app:fontFamily="@font/poppins_medium"
+                app:layout_constraintEnd_toStartOf="@+id/add"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="@+id/customerSpinnerLayout"
+                app:layout_constraintTop_toBottomOf="@+id/customerSpinnerLayout" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/add"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/add_loc"
+                app:layout_constraintEnd_toEndOf="@+id/loc_det"
+                app:layout_constraintStart_toEndOf="@+id/add_loc"
+                app:layout_constraintTop_toTopOf="@+id/add_loc"
+                app:srcCompat="@drawable/ic_add" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/time_and_date_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:text="Time and Date"
+                android:textColor="@color/onBackground"
+                android:textSize="20sp"
+                app:fontFamily="@font/poppins_bold"
+                app:layout_constraintStart_toStartOf="@+id/add_loc"
+                app:layout_constraintTop_toBottomOf="@+id/add" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/time_and_date_desc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:lines="2"
+                android:text="We need to have more information about you and your car's location"
+                android:textColor="@color/textColorOnBackground"
+                android:textSize="14sp"
+                app:fontFamily="@font/poppins_medium"
+                app:layout_constraintEnd_toEndOf="@+id/add"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/time_and_date_title"
+                app:layout_constraintTop_toBottomOf="@+id/time_and_date_title" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="@{!viewModel.isNow}"
+                android:layout_marginTop="10dp"
+                android:background="@{viewModel.isNow? @color/onBackground : @color/cardBackground}"
+                android:padding="8dp"
+                android:onClick="@{() -> viewModel.toggleIsNow()}"
+                app:layout_constraintEnd_toStartOf="@+id/constraintLayout2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="@+id/time_and_date_desc"
+                app:layout_constraintTop_toBottomOf="@+id/time_and_date_desc">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/now"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Now"
+                    android:textColor="@{viewModel.isNow? @color/white : @color/onBackground}"
+                    android:textSize="15sp"
+                    app:fontFamily="@font/poppins_bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/now_desc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="As soon as possible"
+                    android:textColor="@color/textColorOnBackground"
+                    android:textSize="11sp"
+                    app:fontFamily="@font/poppins_medium"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/now"
+                    app:layout_constraintTop_toBottomOf="@+id/now" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/fasttime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/now_desc"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/fast_time" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="@{viewModel.isNow}"
+                android:onClick="@{() -> viewModel.toggleIsNow()}"
+                android:background="@{!viewModel.isNow? @color/onBackground : @color/cardBackground}"
+                android:padding="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+                app:layout_constraintEnd_toEndOf="@id/time_and_date_desc"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/constraintLayout"
+                app:layout_constraintTop_toTopOf="@+id/constraintLayout">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/schedule"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Schedule"
+                    android:textColor="@{!viewModel.isNow? @color/white : @color/onBackground}"
+                    android:textSize="15sp"
+                    app:fontFamily="@font/poppins_bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/schedule_desc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Pick a time and date"
+                    android:textColor="@color/textColorOnBackground"
+                    android:textSize="11sp"
+                    app:fontFamily="@font/poppins_medium"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/schedule"
+                    app:layout_constraintTop_toBottomOf="@+id/schedule" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/timetable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/schedule_desc"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/timetable" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/payment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:text="Payment"
+                android:textColor="@color/onBackground"
+                android:textSize="20sp"
+                app:fontFamily="@font/poppins_bold"
+                app:layout_constraintStart_toStartOf="@+id/desc"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/payment_det"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:lines="2"
+                android:text="We need to have more information about you and your car's info"
+                android:textColor="@color/textColorOnBackground"
+                android:textSize="14sp"
+                app:fontFamily="@font/poppins_medium"
+                app:layout_constraintEnd_toEndOf="@+id/constraintLayout2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/payment"
+                app:layout_constraintTop_toBottomOf="@+id/payment" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/pay_method_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Choose a payment method"
+                android:textColor="@color/onBackground"
+                android:textSize="17sp"
+                app:fontFamily="@font/poppins_medium"
+                app:layout_constraintStart_toStartOf="@+id/payment_det"
+                app:layout_constraintTop_toBottomOf="@+id/payment_det" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/customerSpinnerLayout2"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_background"
+                android:hint="Pay with ..."
+                app:layout_constraintEnd_toEndOf="@+id/loc_det"
+                app:layout_constraintStart_toStartOf="@+id/pay_method_text"
+                app:layout_constraintTop_toBottomOf="@+id/pay_method_text">
+
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/customerTextView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/card_background"
+                    android:clickable="true"
+                    android:textColor="@color/textColorOnBackground"
+                    android:textSize="13sp"
+                    app:fontFamily="@font/poppins_medium"
+                    tools:ignore="KeyboardInaccessibleWidget" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/cost_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="28dp"
+                android:text="Total Cost"
+                android:textColor="@color/textColorOnBackground"
+                android:textSize="18sp"
+                app:fontFamily="@font/poppins_medium"
+                app:layout_constraintEnd_toStartOf="@+id/cost"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/customerSpinnerLayout2"
+                app:layout_constraintTop_toBottomOf="@+id/customerSpinnerLayout2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/cost"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:lines="2"
+                android:text="$12000"
+                android:textColor="@color/onBackground"
+                android:textSize="18sp"
+                app:fontFamily="@font/poppins_medium"
+                app:layout_constraintBottom_toBottomOf="@+id/cost_info"
+                app:layout_constraintEnd_toEndOf="@+id/customerSpinnerLayout2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/cost_info"
+                app:layout_constraintTop_toTopOf="@+id/cost_info" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_35"
+                android:background="@drawable/button_background_blu"
+                android:drawableEnd="@drawable/arrow"
+                android:drawablePadding="15dp"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingStart="@dimen/size_20"
+                android:paddingEnd="@dimen/size_20"
+                android:text="Confirm"
+                android:textAllCaps="false"
+                android:textColor="@color/background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cost" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>
+

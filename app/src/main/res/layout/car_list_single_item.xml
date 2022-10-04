@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="carDetails"
+            type="com.maricool.carcare.data.entities.CarDetails" />
+
+        <variable
+            name="listener"
+            type="com.maricool.carcare.data.interfaces.ItemClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/container_card"
+        android:padding="8dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/card_background">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/linearLayoutCompat2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayoutCompat"
+            app:layout_constraintEnd_toStartOf="@+id/linearLayoutCompat3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/linearLayoutCompat"
+            app:layout_constraintTop_toTopOf="@+id/linearLayoutCompat">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Model"
+                android:textColor="@color/textColorOnBackground"
+                android:textSize="12sp"
+                app:fontFamily="@font/poppins_medium" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="60dp"
+                android:lines="1"
+                android:id="@+id/model"
+                android:ems="9"
+                android:text="@{carDetails.model}"
+                android:layout_height="wrap_content"
+                tools:text="Toyota Acura"
+                android:textColor="@color/onBackground"
+                android:textSize="12sp"
+                app:fontFamily="@font/poppins_semibold" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/linearLayoutCompat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/linearLayoutCompat2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textColor="@color/textColorOnBackground"
+                android:textSize="12sp"
+                app:fontFamily="@font/poppins_medium" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="70dp"
+                android:lines="1"
+                android:text="@{carDetails.model}"
+                android:ems="9"
+                android:id="@+id/name"
+                android:layout_height="wrap_content"
+                tools:text="Toyota Acura"
+                android:textColor="@color/onBackground"
+                android:textSize="12sp"
+                app:fontFamily="@font/poppins_semibold" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/linearLayoutCompat4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginStart="8dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayoutCompat3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/linearLayoutCompat3"
+            app:layout_constraintTop_toTopOf="@+id/linearLayoutCompat3">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date added"
+                android:textColor="@color/textColorOnBackground"
+                android:textSize="12sp"
+                app:fontFamily="@font/poppins_medium" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="60dp"
+                android:lines="1"
+                android:ems="9"
+                android:text="@{carDetails.date}"
+                android:id="@+id/date"
+                android:layout_height="wrap_content"
+                tools:text="Toyota Acura"
+                android:textColor="@color/onBackground"
+                android:textSize="12sp"
+                app:fontFamily="@font/poppins_semibold" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/linearLayoutCompat3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayoutCompat2"
+            app:layout_constraintEnd_toStartOf="@+id/linearLayoutCompat4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/linearLayoutCompat2"
+            app:layout_constraintTop_toTopOf="@+id/linearLayoutCompat2">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reg No."
+                android:textColor="@color/textColorOnBackground"
+                android:textSize="12sp"
+                app:fontFamily="@font/poppins_medium" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="80dp"
+                android:lines="1"
+                android:text="@{carDetails.plateNumber}"
+                android:id="@+id/reg_no"
+                android:ems="9"
+                android:layout_height="wrap_content"
+                tools:text="Toyota Acura"
+                android:textColor="@color/onBackground"
+                android:textSize="12sp"
+                app:fontFamily="@font/poppins_semibold" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Carcare</string>
+    <string name="app_short_title">Your On demand Car service App</string>
+    <string name="app_welcome">Welcome to Carcare</string>
+
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="splash_screen_label">Splash Screen Fragment</string>
+    <string name="welcome_screen_label">Welcome Screen Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="create_your_account">Create your account</string>
+    <string name="log_in">Log in</string>
+    <string name="get_questions">Got Questions?</string>
+    <string name="ask_here">ask here</string>
+    <string name="login_to_your_account">Log Into Your Account</string>
+    <string name="email_address">Email Address:</string>
+    <string name="password">Password:</string>
+    <string name="full_name">Full Name:</string>
+    <string name="phone_number">Phone Number:</string>
+    <string name="confirm_password">Confirm Password:</string>
+    <string name="rewards">Rewards</string>
+    <string name="my_car">My car</string>
+    <string name="menu">Menu</string>
+    <string name="home">Home</string>
+
+    <string name="request_service">Request Service</string>
+    <string name="request_service_desc">Ranging from request to corrections</string>
+    <string name="schedule">Schedule</string>
+    <string name="schedule_desc">Ranging from request to corrections</string>
+    <string name="track_car">Track car</string>
+    <string name="track_car_desc">Ranging from request to corrections</string>
+    <string name="nearby">Nearby</string>
+    <string name="nearby_desc">Ranging from request to corrections</string>
+    <string name="support">Support</string>
+    <string name="support_desc">Ranging from request to corrections</string>
+    <string name="billing">Billing</string>
+    <string name="billing_desc">Ranging from request to corrections</string>
+
+    <string name="email_err">Invalid email format</string>
+    <string name="password_err">Password is too short.</string>
+    <string name="name_err">Display name is too short</string>
+    <string name="password_not_same">Error with your Password.</string>
+
+    <string name="err_message">Error</string>
+    <string name="internet_error">Check your internet connection and try again</string>
+    <string name="success">Success</string>
+
+    <string name="car_model_err">Please enter the car model</string>
+    <string name="car_color_err">Please enter the car color</string>
+    <string name="car_area_err">Please enter the car location</string>
+    <string name="car_plate_number_err">Please enter the car plate number</string>
+    <string name="car_vin_number_err">Please enter the car vin number</string>
+    <string name="car_image_err">Please choose an image</string>
+</resources>

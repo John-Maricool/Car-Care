@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.maricool.carcare.ui.car_list.MyCarViewModel" />
+
+        <variable
+            name="adapter"
+            type="com.maricool.carcare.ui.car_list.MyCarRecyclerAdapter" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        tools:context=".ui.car_list.MyCarFragment">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/shapeableImageView"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_arrow_back" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/header_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select a car"
+            android:textColor="@color/onBackground"
+            android:textSize="20sp"
+            app:fontFamily="@font/poppins_bold"
+            app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/shapeableImageView" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/cardBackground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header_text" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/saved_cars_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="36dp"
+            android:text="Saved Cars"
+            android:textColor="@color/onBackground"
+            android:textSize="20sp"
+            app:fontFamily="@font/poppins_bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/saved_cars_desc"
+            android:layout_width="0dp"
+            android:layout_marginEnd="10dp"
+            android:layout_height="wrap_content"
+            android:lines="2"
+            android:text="Pick a details of the car you want or change the car or add another"
+            android:textColor="@color/textColorOnBackground"
+            android:textSize="14sp"
+            app:fontFamily="@font/poppins_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/saved_cars_title"
+            app:layout_constraintTop_toBottomOf="@+id/saved_cars_title" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="10dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_marginBottom="16dp"
+            android:visibility="@{viewModel.isLoadedSuccess() ? View.VISIBLE: View.GONE}"
+            app:layout_constraintBottom_toTopOf="@+id/add"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:setCarsAdapter="@{adapter}"
+            tools:listitem="@layout/car_list_single_item"
+            app:submitCarsList="@{viewModel.success}"
+            app:layout_constraintStart_toStartOf="@+id/saved_cars_title"
+            app:layout_constraintTop_toBottomOf="@+id/saved_cars_desc" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Saved Cars"
+            android:textColor="@color/textColorOnBackground"
+            android:textSize="20sp"
+            android:visibility="@{!viewModel.isLoadedSuccess() ? View.VISIBLE: View.GONE}"
+            app:fontFamily="@font/poppins_semibold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/button_background_blu"
+            android:drawableEnd="@drawable/arrow"
+            android:drawablePadding="15dp"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingStart="@dimen/size_20"
+            android:paddingEnd="@dimen/size_20"
+            android:text="Add a new car"
+            android:textAllCaps="false"
+            android:textColor="@color/background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

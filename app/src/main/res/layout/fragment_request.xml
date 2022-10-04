@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.maricool.carcare.ui.request_service.RequestViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        tools:context=".ui.request_service.RequestServiceFragment">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/shapeableImageView"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_arrow_back" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/header_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/request_service"
+            android:textColor="@color/onBackground"
+            android:textSize="20sp"
+            app:fontFamily="@font/poppins_bold"
+            app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/shapeableImageView" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/textColorOnBackground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header_text" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/service_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="36dp"
+            android:text="What service do you need?"
+            android:textColor="@color/onBackground"
+            android:textSize="20sp"
+            app:fontFamily="@font/poppins_bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/service_det"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            android:lines="2"
+            android:text="Pick your preferred service to confirm the request you would like us to help you with "
+            android:textColor="@color/textColorOnBackground"
+            android:textSize="14sp"
+            app:fontFamily="@font/poppins_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/service_text" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/checkup"
+            android:layout_width="0dp"
+            android:onClick="@{() -> viewmodel.goToCheckupPressed()}"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="28dp"
+            android:background="@drawable/card_background"
+            android:padding="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/service_text"
+            app:layout_constraintTop_toBottomOf="@+id/service_det">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/checkup_img"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/checkup_title"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/checkup" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/checkup_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:text="Checkup"
+                android:textColor="@color/onBackground"
+                android:textSize="15sp"
+                app:fontFamily="@font/poppins_semibold"
+                app:layout_constraintBottom_toBottomOf="@+id/checkup_img"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/checkup_img"
+                app:layout_constraintTop_toTopOf="@+id/checkup_img" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/checkup_des"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="Checkup on your car, pick a date and out technician assistant will come for the car shortly"
+                android:textColor="@color/onBackground"
+                android:textSize="11sp"
+                app:fontFamily="@font/poppins_medium"
+                app:layout_constraintEnd_toEndOf="@+id/checkup_title"
+                app:layout_constraintStart_toStartOf="@+id/checkup_title"
+                app:layout_constraintTop_toBottomOf="@+id/checkup_title" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/repair"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/card_background"
+            android:padding="12dp"
+            app:layout_constraintEnd_toEndOf="@+id/checkup"
+            app:layout_constraintStart_toStartOf="@id/checkup"
+            app:layout_constraintTop_toBottomOf="@+id/checkup">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/repair_img"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/repair_title"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/repair" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/repair_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:text="Repair"
+                android:textColor="@color/onBackground"
+                android:textSize="15sp"
+                app:fontFamily="@font/poppins_semibold"
+                app:layout_constraintBottom_toBottomOf="@+id/repair_img"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/repair_img"
+                app:layout_constraintTop_toTopOf="@+id/repair_img" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/repair_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="Checkup on your car, pick a date and out technician assistant will come for the car shortly"
+                android:textColor="@color/onBackground"
+                android:textSize="11sp"
+                app:fontFamily="@font/poppins_medium"
+                app:layout_constraintEnd_toEndOf="@+id/repair_title"
+                app:layout_constraintStart_toStartOf="@+id/repair_title"
+                app:layout_constraintTop_toBottomOf="@+id/repair_title" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/maintainance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="28dp"
+            android:background="@drawable/card_background"
+            android:padding="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/repair"
+            app:layout_constraintTop_toBottomOf="@+id/repair">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_img"
+                android:layout_width="25dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/main_title"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/maintenance" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/main_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                android:text="Maintainance"
+                android:textColor="@color/onBackground"
+                android:textSize="15sp"
+                app:fontFamily="@font/poppins_semibold"
+                app:layout_constraintBottom_toBottomOf="@+id/main_img"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/main_img"
+                app:layout_constraintTop_toTopOf="@+id/main_img" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/main_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="Checkup on your car, pick a date and out technician assistant will come for the car shortly"
+                android:textColor="@color/onBackground"
+                android:textSize="11sp"
+                app:fontFamily="@font/poppins_medium"
+                app:layout_constraintEnd_toEndOf="@+id/main_title"
+                app:layout_constraintStart_toStartOf="@+id/main_title"
+                app:layout_constraintTop_toBottomOf="@+id/main_title" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

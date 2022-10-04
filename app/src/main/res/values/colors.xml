@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background">#F5F5F5</color>
+    <color name="onBackground">#1F2C5D</color>
+    <color name="textColorOnBackground">#8D8D8D</color>
+    <color name="cardBackground">#E8E3E3EC</color>
+    <color name="white">#fff</color>
+</resources>
