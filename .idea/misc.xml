@@ -7,11 +7,13 @@
         <entry key="..\:/Users/JOHN BATISTA/AndroidStudioProjects/Carcare/app/src/main/res/drawable-v24/button_background_white.xml" value="0.104" />
         <entry key="..\:/Users/JOHN BATISTA/AndroidStudioProjects/Carcare/app/src/main/res/drawable-v24/card_background.xml" value="0.136" />
         <entry key="..\:/Users/JOHN BATISTA/AndroidStudioProjects/Carcare/app/src/main/res/drawable-v24/card_background_colored.xml" value="0.136" />
+        <entry key="..\:/Users/JOHN BATISTA/AndroidStudioProjects/Carcare/app/src/main/res/drawable-v24/card_background_snall_radius.xml" value="0.136" />
         <entry key="..\:/Users/JOHN BATISTA/AndroidStudioProjects/Carcare/app/src/main/res/drawable/bottom_nav_seletor.xml" value="0.136" />
         <entry key="..\:/Users/JOHN BATISTA/AndroidStudioProjects/Carcare/app/src/main/res/drawable/ic_access_time.xml" value="0.136" />
         <entry key="..\:/Users/JOHN BATISTA/AndroidStudioProjects/Carcare/app/src/main/res/drawable/ic_arrow_back.xml" value="0.1" />
         <entry key="..\:/Users/JOHN BATISTA/AndroidStudioProjects/Carcare/app/src/main/res/drawable/ic_arrow_forward.xml" value="0.136" />
         <entry key="..\:/Users/JOHN BATISTA/AndroidStudioProjects/Carcare/app/src/main/res/drawable/ic_baseline_date.xml" value="0.136" />
+        <entry key="..\:/Users/JOHN BATISTA/AndroidStudioProjects/Carcare/app/src/main/res/drawable/ic_brake_2.xml" value="0.136" />
         <entry key="..\:/Users/JOHN BATISTA/AndroidStudioProjects/Carcare/app/src/main/res/drawable/ic_car_wash.xml" value="0.136" />
         <entry key="..\:/Users/JOHN BATISTA/AndroidStudioProjects/Carcare/app/src/main/res/drawable/ic_image.xml" value="0.1" />
         <entry key="..\:/Users/JOHN BATISTA/AndroidStudioProjects/Carcare/app/src/main/res/drawable/ic_notifications.xml" value="0.136" />
@@ -24,13 +26,15 @@
         <entry key="..\:/Users/JOHN BATISTA/AndroidStudioProjects/Carcare/app/src/main/res/layout/car_list_single_item.xml" value="0.25" />
         <entry key="..\:/Users/JOHN BATISTA/AndroidStudioProjects/Carcare/app/src/main/res/layout/content_main.xml" value="0.19324497648567765" />
         <entry key="..\:/Users/JOHN BATISTA/AndroidStudioProjects/Carcare/app/src/main/res/layout/fragment_add_car_details.xml" value="0.18" />
-        <entry key="..\:/Users/JOHN BATISTA/AndroidStudioProjects/Carcare/app/src/main/res/layout/fragment_chcekup.xml" value="0.22" />
+        <entry key="..\:/Users/JOHN BATISTA/AndroidStudioProjects/Carcare/app/src/main/res/layout/fragment_chcekup.xml" value="0.2089728453364817" />
         <entry key="..\:/Users/JOHN BATISTA/AndroidStudioProjects/Carcare/app/src/main/res/layout/fragment_confirm_details.xml" value="0.22" />
         <entry key="..\:/Users/JOHN BATISTA/AndroidStudioProjects/Carcare/app/src/main/res/layout/fragment_first.xml" value="0.22395833333333334" />
         <entry key="..\:/Users/JOHN BATISTA/AndroidStudioProjects/Carcare/app/src/main/res/layout/fragment_home.xml" value="0.18" />
         <entry key="..\:/Users/JOHN BATISTA/AndroidStudioProjects/Carcare/app/src/main/res/layout/fragment_login.xml" value="0.33" />
+        <entry key="..\:/Users/JOHN BATISTA/AndroidStudioProjects/Carcare/app/src/main/res/layout/fragment_menu.xml" value="0.25" />
         <entry key="..\:/Users/JOHN BATISTA/AndroidStudioProjects/Carcare/app/src/main/res/layout/fragment_my_car.xml" value="0.25" />
         <entry key="..\:/Users/JOHN BATISTA/AndroidStudioProjects/Carcare/app/src/main/res/layout/fragment_request.xml" value="0.2" />
+        <entry key="..\:/Users/JOHN BATISTA/AndroidStudioProjects/Carcare/app/src/main/res/layout/fragment_rewards.xml" value="0.22" />
         <entry key="..\:/Users/JOHN BATISTA/AndroidStudioProjects/Carcare/app/src/main/res/layout/fragment_second.xml" value="0.1" />
         <entry key="..\:/Users/JOHN BATISTA/AndroidStudioProjects/Carcare/app/src/main/res/layout/fragment_signup.xml" value="0.22" />
         <entry key="..\:/Users/JOHN BATISTA/AndroidStudioProjects/Carcare/app/src/main/res/layout/fragment_splash_screen.xml" value="0.16" />

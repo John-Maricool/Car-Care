@@ -7,8 +7,6 @@ P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 l
 <app/src/main/java/com/maricool/carcare/ui/rewardsFragment.kt,6\c\6c57c9c8371a037b629effc7ebf0f72bf48c659b
-i
-9app/src/main/java/com/maricool/carcare/ui/MenuFragment.kt,1\f\1f3bca9d94fb74e55453274d9c69c3d629f889b8
 o
 ?app/src/main/java/com/maricool/carcare/ui/home/HomeViewModel.kt,e\5\e58c4a7b6fd118a895b83f31310506ccd7d827b4
 p
@@ -57,3 +55,17 @@ Dapp/src/main/java/com/maricool/carcare/ui/car_list/MyCarViewModel.kt,f\b\fb3b0
 Oapp/src/main/java/com/maricool/carcare/ui/car_details/AddCarDetailsViewModel.kt,2\0\20faab37329bddda58bb4263e6f455ce3e63fd21
 r
 Bapp/src/main/java/com/maricool/carcare/data/entities/CarDetails.kt,0\4\04c3bcd062a31fa704fe0fb023ce9658a985f4ad
+„
+Tapp/src/main/java/com/maricool/carcare/ui/confirm_details/ConfirmDetailsViewModel.kt,d\5\d5e34a2b75afad7e890ae7d9d1cee92b4dbd0b89
+s
+Capp/src/main/java/com/maricool/carcare/ui/checkup/CheckupBinding.kt,e\7\e7cc15e3cfa330f40059510186e6b8c59a0ba25c
+t
+Dapp/src/main/java/com/maricool/carcare/ui/checkup/ChcekupFragment.kt,c\c\ccca4234a149588a300447ea554fc2d86b66cbfa
+u
+Eapp/src/main/java/com/maricool/carcare/ui/checkup/ChcekupViewModel.kt,a\3\a325303aa2cdcaeef6db8d5006cefc6de5ccb231
+ƒ
+Sapp/src/main/java/com/maricool/carcare/ui/confirm_details/ConfirmDetailsFragment.kt,1\b\1b1652d5e089ede0660c5476888c5485de6fba56
+s
+Capp/src/main/java/com/maricool/carcare/ui/car_list/MyCarFragment.kt,a\5\a5725b8d9824f9a80042769a90d388eca189efbb
+i
+9app/src/main/java/com/maricool/carcare/ui/MenuFragment.kt,1\f\1f3bca9d94fb74e55453274d9c69c3d629f889b8

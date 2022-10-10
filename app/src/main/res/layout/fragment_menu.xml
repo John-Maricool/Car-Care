@@ -1,13 +1,330 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:padding="10dp"
     tools:context=".ui.MenuFragment">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/header_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Menu"
+        android:textColor="@color/onBackground"
+        android:textSize="20sp"
+        app:fontFamily="@font/poppins_bold"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/shapeableImageView" />
 
-    <TextView
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/cardBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header_text" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_margin="15dp"
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/appCompatImageView"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:background="@drawable/card_background_snall_radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/personal" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="15dp"
+            android:text="Personal"
+            android:textColor="@color/onBackground"
+            android:textSize="20sp"
+            app:fontFamily="@font/poppins_medium"
+            app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView"
+            app:layout_constraintStart_toEndOf="@+id/appCompatImageView"
+            app:layout_constraintTop_toTopOf="@+id/appCompatImageView" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_gravity="right"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView"
+            app:layout_constraintTop_toTopOf="@+id/appCompatImageView"
+            app:srcCompat="@drawable/ic_arrow_forward"
+            tools:layout_editor_absoluteX="370dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_margin="15dp"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/appCompatImageView2"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:background="@drawable/card_background_snall_radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/security" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="15dp"
+            android:text="Security"
+            android:textColor="@color/onBackground"
+            android:textSize="20sp"
+            app:fontFamily="@font/poppins_medium"
+            app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView2"
+            app:layout_constraintStart_toEndOf="@+id/appCompatImageView2"
+            app:layout_constraintTop_toTopOf="@+id/appCompatImageView2" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_gravity="right"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView2"
+            app:layout_constraintTop_toTopOf="@+id/appCompatImageView2"
+            app:srcCompat="@drawable/ic_arrow_forward"
+            tools:layout_editor_absoluteX="370dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_margin="15dp"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/appCompatImageView3"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:background="@drawable/card_background_snall_radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/refer_and_earn" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="15dp"
+            android:text="Refer and Earn"
+            android:textColor="@color/onBackground"
+            android:textSize="20sp"
+            app:fontFamily="@font/poppins_medium"
+            app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView3"
+            app:layout_constraintStart_toEndOf="@+id/appCompatImageView3"
+            app:layout_constraintTop_toTopOf="@+id/appCompatImageView3" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_gravity="right"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView3"
+            app:layout_constraintTop_toTopOf="@+id/appCompatImageView3"
+            app:srcCompat="@drawable/ic_arrow_forward"
+            tools:layout_editor_absoluteX="370dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_margin="15dp"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/appCompatImageView4"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:background="@drawable/card_background_snall_radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/help_center" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="15dp"
+            android:text="Help center"
+            android:textColor="@color/onBackground"
+            android:textSize="20sp"
+            app:fontFamily="@font/poppins_medium"
+            app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView4"
+            app:layout_constraintStart_toEndOf="@+id/appCompatImageView4"
+            app:layout_constraintTop_toTopOf="@+id/appCompatImageView4" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_gravity="right"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView4"
+            app:layout_constraintTop_toTopOf="@+id/appCompatImageView4"
+            app:srcCompat="@drawable/ic_arrow_forward"
+            tools:layout_editor_absoluteX="370dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_margin="15dp"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/appCompatImageView5"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:background="@drawable/card_background_snall_radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/rate_our_app" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="15dp"
+            android:text="Rate our app"
+            android:textColor="@color/onBackground"
+            android:textSize="20sp"
+            app:fontFamily="@font/poppins_medium"
+            app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView5"
+            app:layout_constraintStart_toEndOf="@+id/appCompatImageView5"
+            app:layout_constraintTop_toTopOf="@+id/appCompatImageView5" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_gravity="right"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView5"
+            app:layout_constraintTop_toTopOf="@+id/appCompatImageView5"
+            app:srcCompat="@drawable/ic_arrow_forward"
+            tools:layout_editor_absoluteX="370dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_margin="15dp"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/appCompatImageView6"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:background="@drawable/card_background_snall_radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/terms_and_condition" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="15dp"
+            android:text="Terms and Conditions"
+            android:textColor="@color/onBackground"
+            android:textSize="20sp"
+            app:fontFamily="@font/poppins_medium"
+            app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView6"
+            app:layout_constraintStart_toEndOf="@+id/appCompatImageView6"
+            app:layout_constraintTop_toTopOf="@+id/appCompatImageView6" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_gravity="right"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView6"
+            app:layout_constraintTop_toTopOf="@+id/appCompatImageView6"
+            app:srcCompat="@drawable/ic_arrow_forward"
+            tools:layout_editor_absoluteX="370dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_margin="15dp"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/appCompatImageView7"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:background="@drawable/card_background_snall_radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/about_app" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="15dp"
+            android:text="About app"
+            android:textColor="@color/onBackground"
+            android:textSize="20sp"
+            app:fontFamily="@font/poppins_medium"
+            app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView7"
+            app:layout_constraintStart_toEndOf="@+id/appCompatImageView7"
+            app:layout_constraintTop_toTopOf="@+id/appCompatImageView7" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_gravity="right"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView7"
+            app:layout_constraintTop_toTopOf="@+id/appCompatImageView7"
+            app:srcCompat="@drawable/ic_arrow_forward"
+            tools:layout_editor_absoluteX="370dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:id="@+id/log_out"
+        android:text="Log out"
+        android:layout_gravity="center"
+        android:textAllCaps="false"
+        android:background="@drawable/card_background"
+        app:fontFamily="@font/poppins_medium"
+        android:layout_margin="20dp"
+        android:textColor="#F40909"/>
+</androidx.appcompat.widget.LinearLayoutCompat>
