@@ -14,7 +14,7 @@ interface CarDao {
     suspend fun getAllCarDetails(): List<CarModel>
 
     @Query("select * from CarModel where carId = :id")
-    suspend fun getCar(id: Int): CarModel
+    suspend fun getCar(id: Int): CarModel?
 
     @Query("delete from CarModel")
     suspend fun deleteAll()

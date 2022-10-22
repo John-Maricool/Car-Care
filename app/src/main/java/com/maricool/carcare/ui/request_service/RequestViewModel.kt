@@ -10,12 +10,11 @@ import javax.inject.Inject
 class RequestViewModel
 @Inject constructor() : ViewModel() {
 
-    private val _checkupEvent = MutableLiveData<Unit>()
+    private val _checkupEvent = MutableLiveData<Int>()
+    val checkupEvent: LiveData<Int> = _checkupEvent
 
-    val checkupEvent: LiveData<Unit> = _checkupEvent
-
-    fun goToCheckupPressed() {
-        _checkupEvent.value = Unit
+    fun goToCheckupPressed(type: Int) {
+        _checkupEvent.value = type
     }
 
 }

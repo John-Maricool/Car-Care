@@ -42,7 +42,13 @@ class RequestServiceFragment : Fragment(R.layout.fragment_request) {
             findNavController().navigateUp()
         }
         viewModel.checkupEvent.observe(viewLifecycleOwner) {
-            findNavController().navigate(R.id.chcekupFragment)
+            if (it != null) {
+                val action =
+                    RequestServiceFragmentDirections.actionRequestServiceFragmentToChcekupFragment(
+                        it
+                    )
+                findNavController().navigate(action)
+            }
         }
     }
 

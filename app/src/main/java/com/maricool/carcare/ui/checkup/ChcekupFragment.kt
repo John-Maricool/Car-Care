@@ -8,8 +8,8 @@ import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
@@ -21,7 +21,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class ChcekupFragment : Fragment(R.layout.fragment_chcekup) {
 
     private val viewModel: ChcekupViewModel by activityViewModels()
-
+    private val args: ChcekupFragmentArgs by navArgs()
     private var _binding: FragmentChcekupBinding? = null
     private val binding get() = _binding!!
     lateinit var pickerBuilt: MaterialDatePicker<Long>
@@ -32,6 +32,7 @@ class ChcekupFragment : Fragment(R.layout.fragment_chcekup) {
     ): View? {
         _binding = FragmentChcekupBinding.inflate(inflater, container, false)
         viewModel.getCar()
+        viewModel.changeType(args.type)
         return binding.root
     }
 
@@ -44,18 +45,14 @@ class ChcekupFragment : Fragment(R.layout.fragment_chcekup) {
         })
         viewModel.isNow.observe(viewLifecycleOwner) {
             if (!it) {
-               showDatePicker()
-            }else{
+                showDatePicker()
+            } else {
                 showTimePicker()
             }
         }
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
         binding.executePendingBindings()
-        /*viewModel.car.observe(viewLifecycleOwner) {
-            if (it != null)
-                binding.carDetails = it
-        }*/
         binding.shapeableImageView.setOnClickListener {
             findNavController().navigate(R.id.action_chcekupFragment_to_requestServiceFragment)
         }
@@ -67,7 +64,7 @@ class ChcekupFragment : Fragment(R.layout.fragment_chcekup) {
         }
     }
 
-    private fun showDatePicker(){
+    private fun showDatePicker() {
         val picker = MaterialDatePicker.Builder
             .datePicker()
         picker.setSelection(MaterialDatePicker.todayInUtcMilliseconds())
@@ -98,8 +95,8 @@ class ChcekupFragment : Fragment(R.layout.fragment_chcekup) {
         }
     }
 
-    private fun formatTime(pickedHour: Int, pickedMinute:Int): String{
-        return  when {
+    private fun formatTime(pickedHour: Int, pickedMinute: Int): String {
+        return when {
             pickedHour > 12 -> {
                 if (pickedMinute < 10) {
                     "${pickedHour - 12}:0${pickedMinute} pm"

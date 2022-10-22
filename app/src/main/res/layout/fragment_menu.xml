@@ -25,14 +25,11 @@
 
     <View
         android:id="@+id/view"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="8dp"
-        android:background="@color/cardBackground"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header_text" />
+        android:background="@color/textColorOnBackground"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

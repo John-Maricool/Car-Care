@@ -9,7 +9,7 @@ import androidx.databinding.BindingAdapter
 fun AutoCompleteTextView.getMeetingPlacesAdapter(places: List<String>){
     val adapter =
         ArrayAdapter(this.context, R.layout.simple_dropdown_item_1line, places)
-    threshold = 3
+    threshold = 2
     setAdapter(adapter)
 }
 
@@ -17,6 +17,6 @@ fun AutoCompleteTextView.getMeetingPlacesAdapter(places: List<String>){
 fun AutoCompleteTextView.getPaymentOptionsAdapter(options: List<String>){
     val adapter =
         ArrayAdapter(this.context, R.layout.simple_dropdown_item_1line, options)
-    threshold = 3
+    threshold = 2
     setAdapter(adapter)
 }

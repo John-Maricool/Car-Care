@@ -12,6 +12,8 @@
         <variable
             name="viewModel"
             type="com.maricool.carcare.ui.checkup.ChcekupViewModel"/>
+
+        <import type="android.view.View"/>
     </data>
 
     <ScrollView
@@ -253,6 +255,33 @@
                 app:layout_constraintStart_toStartOf="@+id/prob_text"
                 app:layout_constraintTop_toBottomOf="@+id/prob_text" />
 
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/issue_spinner"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_background"
+                android:hint="What part do got damaged"
+                android:visibility="@{viewModel._type == 1 ? View.VISIBLE: View.GONE}"
+                app:hintTextColor="@color/onBackground"
+                app:layout_constraintEnd_toEndOf="@+id/prob_det"
+                app:layout_constraintStart_toStartOf="@+id/prob_det"
+                app:layout_constraintTop_toBottomOf="@+id/prob_det">
+
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/issue_spinner_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/card_background"
+                    android:clickable="true"
+                    android:textColor="@color/textColorOnBackground"
+                    android:textSize="13sp"
+                    app:fontFamily="@font/poppins_medium"
+                    app:meeting_places="@{viewModel.car_issues}"
+                    tools:ignore="KeyboardInaccessibleWidget" />
+            </com.google.android.material.textfield.TextInputLayout>
+
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/err_info"
                 android:layout_width="wrap_content"
@@ -263,7 +292,7 @@
                 android:textSize="17sp"
                 app:fontFamily="@font/poppins_medium"
                 app:layout_constraintStart_toStartOf="@+id/prob_det"
-                app:layout_constraintTop_toBottomOf="@+id/prob_det" />
+                app:layout_constraintTop_toBottomOf="@+id/issue_spinner" />
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/desc"
@@ -272,13 +301,13 @@
                 android:layout_marginTop="13dp"
                 android:background="@drawable/card_background"
                 android:gravity="top"
-                android:text="@={viewModel.issue}"
                 android:hint="Add a title detail about what happened to your car"
+                android:inputType="text|textNoSuggestions"
                 android:lines="10"
                 android:padding="13dp"
-                android:textCursorDrawable="@null"
+                android:text="@={viewModel.issue}"
                 android:textColor="@color/textColorOnBackground"
-                android:inputType="text|textNoSuggestions"
+                android:textCursorDrawable="@null"
                 android:textSize="14sp"
                 app:fontFamily="@font/poppins_medium"
                 app:layout_constraintEnd_toEndOf="@+id/prob_det"
@@ -329,8 +358,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/card_background"
-                app:hintTextColor="@color/onBackground"
                 android:hint="Where should we meet"
+                app:hintTextColor="@color/onBackground"
                 app:layout_constraintEnd_toEndOf="@+id/loc_det"
                 app:layout_constraintStart_toStartOf="@+id/meet"
                 app:layout_constraintTop_toBottomOf="@+id/meet">
@@ -341,10 +370,10 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/card_background"
                     android:clickable="true"
-                    app:meeting_places="@{viewModel.places}"
                     android:textColor="@color/textColorOnBackground"
                     android:textSize="13sp"
                     app:fontFamily="@font/poppins_medium"
+                    app:meeting_places="@{viewModel.places}"
                     tools:ignore="KeyboardInaccessibleWidget" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -405,11 +434,11 @@
                 android:id="@+id/constraintLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:enabled="@{!viewModel.isNow}"
                 android:layout_marginTop="10dp"
                 android:background="@{viewModel.isNow? @color/onBackground : @color/cardBackground}"
-                android:padding="8dp"
+                android:enabled="@{!viewModel.isNow}"
                 android:onClick="@{() -> viewModel.toggleIsNow()}"
+                android:padding="8dp"
                 app:layout_constraintEnd_toStartOf="@+id/constraintLayout2"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintHorizontal_chainStyle="spread_inside"
@@ -455,9 +484,9 @@
                 android:id="@+id/constraintLayout2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@{!viewModel.isNow? @color/onBackground : @color/cardBackground}"
                 android:enabled="@{viewModel.isNow}"
                 android:onClick="@{() -> viewModel.toggleIsNow()}"
-                android:background="@{!viewModel.isNow? @color/onBackground : @color/cardBackground}"
                 android:padding="8dp"
                 app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
                 app:layout_constraintEnd_toEndOf="@id/time_and_date_desc"
@@ -512,6 +541,51 @@
                 app:layout_constraintStart_toStartOf="@+id/desc"
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
 
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/payment_alt_det"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:lines="2"
+                android:text="Information on the total price of the service will be sent to you through the billing section after delivery of service. To learn more, click here."
+                android:textColor="@color/textColorOnBackground"
+                android:textSize="14sp"
+                app:fontFamily="@font/poppins_medium"
+                app:layout_constraintEnd_toEndOf="@+id/constraintLayout2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/payment"
+                app:layout_constraintTop_toBottomOf="@+id/payment" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/wallet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/payment_alt_det"
+                app:srcCompat="@drawable/wallet" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/confirm_sec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_35"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/button_background_blu"
+                android:drawableEnd="@drawable/arrow"
+                android:drawablePadding="15dp"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingStart="@dimen/size_20"
+                android:paddingEnd="@dimen/size_20"
+                android:text="Confirm"
+                android:textAllCaps="false"
+                android:textColor="@color/background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/wallet" />
+
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/payment_det"
                 android:layout_width="0dp"
@@ -557,10 +631,10 @@
                     android:background="@drawable/card_background"
                     android:clickable="true"
                     android:text="@={viewModel.chosenPayment}"
-                    app:payment_options="@{viewModel.paymemt_options}"
                     android:textColor="@color/textColorOnBackground"
                     android:textSize="13sp"
                     app:fontFamily="@font/poppins_medium"
+                    app:payment_options="@{viewModel.paymemt_options}"
                     tools:ignore="KeyboardInaccessibleWidget" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -599,6 +673,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/size_35"
+                android:layout_marginBottom="30dp"
                 android:background="@drawable/button_background_blu"
                 android:drawableEnd="@drawable/arrow"
                 android:drawablePadding="15dp"
@@ -610,9 +685,22 @@
                 android:textColor="@color/background"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginBottom="30dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cost" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="@{viewModel._type == 0 ? View.VISIBLE: View.GONE}"
+                app:constraint_referenced_ids="payment_det,pay_method_text,customerSpinnerLayout2,cost_info,cost, confirm" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/group2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="@{viewModel._type == 1 ? View.VISIBLE: View.GONE}"
+                app:constraint_referenced_ids="confirm_sec,wallet,payment_alt_det" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

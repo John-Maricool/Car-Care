@@ -21,12 +21,23 @@ class ChcekupViewModel
     var selectedDate: String? = null
     var selectedTime: String? = null
 
+    val _type = MutableLiveData<Int>()
+
     val places = listOf(
         "Roadside", "Home", "I'm coming", "My location"
     )
     val paymemt_options = listOf(
         "Pay with cash", "Pay with card", "Pay on delivery"
     )
+    val car_issues = listOf(
+        "Engine and Performance",
+        "Gearbox and Transmission",
+        "Battery and electrical",
+        "Suspension and alignment",
+        "Oil and Oil filter change",
+        "Other services"
+    )
+
 
     val chosenPayment = MutableLiveData<String>()
 
@@ -34,6 +45,10 @@ class ChcekupViewModel
         viewModelScope.launch {
             _car.postValue(usecase.getActiveCar())
         }
+    }
+
+    fun changeType(type: Int) {
+        _type.postValue(type)
     }
 
     fun toggleIsNow() {

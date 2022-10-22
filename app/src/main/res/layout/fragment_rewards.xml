@@ -7,7 +7,30 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:orientation="vertical"
-    tools:context=".ui.rewardsFragment">
+    tools:context=".ui.RewardsFragment">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/header_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reward"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/onBackground"
+        android:textSize="20sp"
+        app:fontFamily="@font/poppins_bold"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/shapeableImageView" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/textColorOnBackground"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
@@ -42,27 +65,44 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
+        android:textColor="@color/textColorOnBackground"
+        android:textSize="12sp"
+        android:layout_marginBottom="5dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
         android:text="How it works" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:textColor="@color/onBackground"
+        android:layout_marginStart="30dp"
         android:layout_height="wrap_content"
-        android:text="How it works" />
+        android:text="1. Click on share code" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
+        android:textColor="@color/onBackground"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="30dp"
         android:layout_height="wrap_content"
-        android:text="How it works" />
+        android:text="2. Share to friends on Social media platforms" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
-        android:text="How it works"
+        android:text="3. You will get 50% off your next booking on the app while your friend gets 20% off their first booking"
+        android:textColor="@color/onBackground"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="30dp"
         android:layout_height="wrap_content" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
-        android:text="How it works"
+        android:layout_marginStart="30dp"
+        android:textColor="@color/onBackground"
+        android:text="4. Start by sharing. Terms and conditions apply"
         android:layout_height="wrap_content" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

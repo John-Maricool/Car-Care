@@ -7,11 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.maricool.carcare.R
+import dagger.hilt.android.AndroidEntryPoint
 
-class rewardsFragment : Fragment() {
+@AndroidEntryPoint
+class RewardsFragment : Fragment(R.layout.fragment_rewards) {
 
     companion object {
-        fun newInstance() = rewardsFragment()
+        fun newInstance() = RewardsFragment()
     }
 
     private lateinit var viewModel: RewardsViewModel
